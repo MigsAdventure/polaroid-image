@@ -27,6 +27,7 @@ export default class Polaroid extends Component {
     }
 
     let containerProperties = {
+      textAlign: 'center',
       display: frameDisplay || 'inline-block',
       margin: frameMargin || '1em',
       height: frameHeight || '25em',

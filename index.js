@@ -67,6 +67,7 @@ var Polaroid = function (_Component) {
       };
 
       var containerProperties = {
+        textAlign: 'center',
         display: frameDisplay || 'inline-block',
         margin: frameMargin || '1em',
         height: frameHeight || '25em',
