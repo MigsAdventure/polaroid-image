@@ -50,7 +50,7 @@ ex:
 > ex.
 > frameMargin='1em 2em' -  1em margin for top/bottom and 2em right/left
 >
-> **frameWidth**  (must be    of type string)
+> **frameWidth**  (must be of type string)
 > ex.
 >  frameWidth='50px' - changes frame width to 50px
 >  
@@ -58,7 +58,7 @@ ex:
 > ex.
 > imageMargin='10px' - margin of image is 10px for top/right/bottom/left
 >
-> **imageWidth**  (must be of type    string)
+> **imageWidth**  (must be of type string)
 > ex.
 > imageWidth='25px' -image width is now 25px
 >
@@ -68,17 +68,17 @@ ex:
 >
 > **frameHeight**  (must be of type string)
 > ex.
-> frameHeight='200px' - FrameHeight is now 200px
+> frameHeight='200px' - frame height is now 200px
 >
 >**imgClass**  (must be of type string) - adds a class to image to make it easy to style in css.
 >ex.
 >imgClass='yourClassName'
 >in css file:
->```css
->.yourClassName {
+```css
+.yourClassName {
 	padding: 2em
->}
->```
+}
+```
 >Image top/right/bottom/left will now have a padding of 2em
 
 **NOTE**
@@ -96,7 +96,7 @@ ex.
 Since the 'border' element is not part of any of the components props, targeting through css WILL work.
 
 ex.
-Inside the css file:
+>Inside the css file:
 ```css
 .targetImage {
     border: 5px solid black;
