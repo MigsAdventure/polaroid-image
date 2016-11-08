@@ -1,6 +1,6 @@
 {
   "name": "polaroid-image",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Turn any image into a polaroid!",
   "main": "index.js",
   "dependencies": {
