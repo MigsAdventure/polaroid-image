@@ -44,6 +44,7 @@ var Polaroid = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props,
+          text = _props.text,
           imageShadow = _props.imageShadow,
           imageMargin = _props.imageMargin,
           imageWidth = _props.imageWidth,
@@ -57,7 +58,8 @@ var Polaroid = function (_Component) {
           frameShadow = _props.frameShadow,
           frameColor = _props.frameColor,
           zoom = _props.zoom,
-          hoverFrameShadow = _props.hoverFrameShadow;
+          hoverFrameShadow = _props.hoverFrameShadow,
+          rotate = _props.rotate;
 
       var imageProperties = {
         boxShadow: imageShadow || '0 0 1px black',
@@ -67,9 +69,11 @@ var Polaroid = function (_Component) {
       };
 
       var containerProperties = {
+        transform: 'rotate(' + (rotate || '0') + 'deg)',
         textAlign: 'center',
         display: frameDisplay || 'inline-block',
-        margin: frameMargin || '1em',
+        margin: frameMargin || '1.5em',
+        verticalAlign: 'bottom',
         height: frameHeight || '25em',
         width: frameWidth || '20em',
         boxShadow: frameShadow || '0 0 15px black, 0 0 5px black',
@@ -83,8 +87,13 @@ var Polaroid = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { style: containerProperties },
-        _react2.default.createElement('img', { className: imgClass, style: imageProperties, src: imgSrc, onMouseEnter: this.toggleHover, onMouseLeave: this.toggleHover })
+        { style: containerProperties, className: 'polaroidFrame' },
+        _react2.default.createElement('img', { className: imgClass, style: imageProperties, src: imgSrc || 'https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/20157_103262589700319_6142195_n.jpg?oh=6089448d44d9e6da2d1fbca18cb63457&oe=588C007F', onMouseEnter: this.toggleHover, onMouseLeave: this.toggleHover }),
+        _react2.default.createElement(
+          'h4',
+          { className: 'polaroid-text' },
+          text
+        )
       );
     }
   }]);
@@ -96,7 +105,7 @@ exports.default = Polaroid;
 
 
 Polaroid.propTypes = {
-  imgSrc: _react2.default.PropTypes.string.isRequired,
+  imgSrc: _react2.default.PropTypes.string,
   zoom: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.bool]),
   imageShadow: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.bool]),
   frameShadow: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.bool]),
@@ -109,5 +118,7 @@ Polaroid.propTypes = {
   frameWidth: _react2.default.PropTypes.string,
   frameHeight: _react2.default.PropTypes.string,
   frameColor: _react2.default.PropTypes.string,
-  imgClass: _react2.default.PropTypes.string
+  imgClass: _react2.default.PropTypes.string,
+  text: _react2.default.PropTypes.string,
+  rotate: _react2.default.PropTypes.string
 };
